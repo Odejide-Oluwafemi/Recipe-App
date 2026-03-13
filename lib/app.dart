@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/constants/app_colors.dart';
+import 'package:recipe_app/screens/home_page.dart';
 import 'package:recipe_app/screens/login_page.dart';
 
 class App extends StatelessWidget {
@@ -12,7 +12,9 @@ class App extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "SofiaPro",
       ),
-      routes: {},
+      routes: {
+        'home': (context) => const HomePage(),
+      },
     );
   }
 }

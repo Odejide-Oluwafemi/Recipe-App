@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../constants/app_colors.dart';
 
@@ -21,14 +20,13 @@ class LoginPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  TextButton(
-                    onPressed: () => {},
+                  GestureDetector(
+                    onTap: () => { Navigator.pushReplacementNamed(context, 'home') },
                     child: Text(
                       "Later",
-                      style: TextStyle(fontSize: 18, color: Colors.white),
+                      style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
-                  SizedBox(width: 15),
                 ],
               ),
             ),
@@ -53,14 +51,74 @@ class LoginPage extends StatelessWidget {
               child: SvgPicture.asset("assets/login/Group-1.svg"),
             ),
             Positioned(
-              top: 205,
-              right: 27.25,
+              top: 238,
+              left: 51,
               child: SvgPicture.asset("assets/login/Group-2.svg"),
             ),
             Positioned(
               top: 205,
               right: 27.25,
               child: SvgPicture.asset("assets/login/Group-3.svg"),
+            ),
+            Positioned(
+              top: 376,
+              left: 67,
+              child: SvgPicture.asset("assets/login/Group-4.svg"),
+            ),
+            Positioned(
+              top: 353,
+              right: 38.29,
+              child: SvgPicture.asset("assets/login/Group-5.svg"),
+            ),
+            Positioned(
+              top: 291,
+              right: 116.2,
+              child: SvgPicture.asset("assets/login/Group-6.svg"),
+            ),
+            Positioned(
+              top: 308,
+              left: 104,
+              child: SvgPicture.asset("assets/login/Group-7.svg"),
+            ),
+            Positioned(
+              top: 285,
+              left: 110.59,
+              child: SvgPicture.asset("assets/login/Group-8.svg"),
+            ),
+            Positioned(
+              top: 388,
+              left: 36,
+              child: SvgPicture.asset("assets/login/Vector.svg"),
+            ),
+            Positioned(
+              top: 162,
+              left: 173,
+              child: SvgPicture.asset("assets/login/Vector-1.svg"),
+            ),
+            Positioned(
+              top: 319,
+              left: 175,
+              child: SvgPicture.asset("assets/login/Vector-2.svg"),
+            ),
+            Positioned(
+              top: 388,
+              left: 36,
+              child: SvgPicture.asset("assets/login/Vector-3.svg"),
+            ),
+            Positioned(
+              top: 412,
+              left: 196,
+              child: SvgPicture.asset("assets/login/Vector-4.svg"),
+            ),
+            Positioned(
+              top: 263,
+              left: 244,
+              child: SvgPicture.asset("assets/login/Vector-5.svg"),
+            ),
+            Positioned(
+              top: 249,
+              left: 169,
+              child: SvgPicture.asset("assets/login/Vector-6.svg"),
             ),
             SafeArea(
               child: Column(
@@ -83,7 +141,9 @@ class LoginPage extends StatelessWidget {
                     children: [
                       Expanded(
                         child: FilledButton(
-                          onPressed: () => {},
+                          onPressed: () => {
+
+                          },
                           style: ButtonStyle(
                             padding: WidgetStateProperty.all(
                               EdgeInsets.all(20),
