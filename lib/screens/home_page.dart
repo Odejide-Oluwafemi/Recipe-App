@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
               ],
             ),
             Text(
-              "Alena Sabyam",
+              "Alena Sabya",
               style: TextStyle(
                 fontSize: 24,
                 color: Colors.black87,
@@ -65,16 +65,6 @@ class HomePage extends StatelessWidget {
                     )),
                   ],
                 ),
-                // SingleChildScrollView(
-                //   child: Row(
-                //     children: [
-                //       ...List.generate(
-                //         5,
-                //         (index) => SingleTile(titleText: "Featured"),
-                //       ),
-                //     ],
-                //   ),
-                // ),
               ],
             ),
           ),

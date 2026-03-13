@@ -16,7 +16,7 @@ class Section extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 14,
+      spacing: 8,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
