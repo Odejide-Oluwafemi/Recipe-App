@@ -56,6 +56,11 @@ class SingleCard extends StatelessWidget {
             child: SvgPicture.asset("assets/card/Group.svg"),
           ),
           Positioned(
+            top: 8.85,
+            left: 164.03,
+            child: SvgPicture.asset("assets/card/Spag-2.svg"),
+          ),
+          Positioned(
             top: 8.15,
             left: 168.03,
             child: SvgPicture.asset("assets/card/Spag-2.svg"),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:recipe_app/constants/app_colors.dart';
 import 'package:recipe_app/widgets/single_card.dart';
 
+import '../widgets/category_button.dart';
+import '../widgets/detail_card_large.dart';
 import '../widgets/section.dart';
 
 class HomePage extends StatelessWidget {
@@ -47,6 +49,7 @@ class HomePage extends StatelessWidget {
           Icon(Icons.shopping_cart_outlined, color: Colors.black87, size: 28),
         ],
       ),
+
       body: Container(
         padding: EdgeInsetsGeometry.all(20).add(EdgeInsets.only(top: 4)),
         width: MediaQuery.of(context).size.width,
@@ -56,20 +59,51 @@ class HomePage extends StatelessWidget {
         child: SafeArea(
           child: SingleChildScrollView(
             child: Column(
+              spacing: 20,
               children: [
                 Section(
                   titleText: "Featured",
                   children: [
-                    ...List.generate(5, (index) => SingleCard(
-
-                    )),
+                    ...List.generate(5, (index) => SingleCard()),
                   ],
+                ),
+                Section(
+                  titleText: "Category",
+                  titleAction: TextButton(onPressed: () => {}, child: Text("See All", style: TextStyle(
+                    fontWeight: FontWeight.bold, color: AppColors.brandPrimary, fontSize: 18
+                  ),)),
+                  children: [
+                    ...List.generate(5, (index)
+                    {
+                      List<String> categories = ["Breakfast", "Lunch", "Dinner", "Snacks", "Dessert"];
+                      return CategoryButton(text: categories[index],);
+                    }),
+                  ],
+                ),
+                Section(
+                  titleText: "Popular Recipes",
+                  children: [
+                    ...List.generate(2, (index) {
+                      List<String> titles = [
+                        "Healthy Taco Salad with Fresh Vegetable",
+                        "Japanese-style Pancake Recipe",
+                      ];
+
+                      List<String> imagePaths = [
+                        "assets/DetailCardImages/Image 1.png",
+                        "assets/DetailCardImages/Image 2.png"
+                      ];
+                      return DetailCardLarge(title: titles[index], imagePath: imagePaths[index],);
+                    }),
+            ]
                 ),
               ],
             ),
           ),
         ),
       ),
+
+      // bottomNavigationBar: BottomNavigationBar(items: items),
     );
   }
 }

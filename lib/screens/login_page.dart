@@ -20,8 +20,9 @@ class LoginPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  GestureDetector(
-                    onTap: () => { Navigator.pushReplacementNamed(context, 'home') },
+                  TextButton(
+
+                    onPressed: () => { Navigator.pushReplacementNamed(context, 'home') },
                     child: Text(
                       "Later",
                       style: TextStyle(fontSize: 20, color: Colors.white),

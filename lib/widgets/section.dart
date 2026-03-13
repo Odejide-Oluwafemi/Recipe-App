@@ -16,12 +16,12 @@ class Section extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 8,
+      spacing: 4,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(titleText, style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
+            Text(titleText, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),
             ?titleAction,
           ],
         ),
