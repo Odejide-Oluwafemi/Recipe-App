@@ -40,7 +40,9 @@ class DetailCardLarge extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         IconButton(
-                          onPressed: () => {},
+                          onPressed: () => {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Toggled Favorite")))
+                          },
                           icon: Icon(Icons.favorite_outline_rounded),
                           color: Colors.black,
                           iconSize: 22,
@@ -85,14 +87,14 @@ class DetailCardLarge extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.local_fire_department_outlined,
-                        size: 22,
+                        size: 18,
                         color: Colors.grey.shade400,
                       ),
                       Text(
                         "120 Kcal",
                         style: TextStyle(
                           color: Colors.grey.shade400,
-                          fontSize: 16,
+                          fontSize: 14,
                         ),
                       ),
                     ],
@@ -111,14 +113,14 @@ class DetailCardLarge extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.local_fire_department_outlined,
-                        size: 22,
+                        size: 18,
                         color: Colors.grey.shade400,
                       ),
                       Text(
                         "120 Kcal",
                         style: TextStyle(
                           color: Colors.grey.shade400,
-                          fontSize: 16,
+                          fontSize: 14,
                         ),
                       ),
                     ],

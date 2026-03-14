@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/widgets/single_card.dart';
 
 class Section extends StatelessWidget {
   const Section({super.key, required this.titleText, required this.children, this.titleAction, this.spacing, this.vertical = false});

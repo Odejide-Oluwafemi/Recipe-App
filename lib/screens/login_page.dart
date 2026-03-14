@@ -21,7 +21,6 @@ class LoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   TextButton(
-
                     onPressed: () => { Navigator.pushReplacementNamed(context, 'home') },
                     child: Text(
                       "Later",

@@ -13,7 +13,8 @@ class App extends StatelessWidget {
         fontFamily: "SofiaPro",
       ),
       routes: {
-        'home': (context) => const HomePage(),
+        'home': (context) => HomePage(),
+
       },
     );
   }
