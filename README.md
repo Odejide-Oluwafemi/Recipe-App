@@ -1,6 +1,6 @@
-# recipe_app
+# Recipe App
 
-A Professional Recipe App
+Figma design credit: https://www.figma.com/design/ZKjS6eqFBFiV7KyM1Yx6FG/-FREE--Recipely---Food-Recipe-Mobile-App-UI-Kit--Community-?node-id=1-2&p=f&t=bDm4uDmrpVoCWYoX-0
 
 ## Getting Started
 

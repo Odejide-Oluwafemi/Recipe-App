@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/constants/app_colors.dart';
+import 'package:recipe_app/widgets/recipe_list_tile.dart';
 
 import '../widgets/category_button.dart';
 import '../widgets/detail_card_small.dart';
@@ -121,22 +122,22 @@ class _SearchPageState extends State<SearchPage> {
                 ...List.generate(3, (index) {
                   List<Map<String, String>> cardDetails = [
                     {
-                      "Bowl of Rice Recipe":
-                          "assets/DetailCardImages/search_recipes_2.png",
+                      "title": "Bowl of Rice Recipe",
+                      "image": "assets/DetailCardImages/search_recipes_2.png",
                     },
                     {
-                      "Egg & Avocado Pancake Recipe":
-                          "assets/DetailCardImages/search_recipes_1.png",
+                      "title": "Egg & Avocado Pancake Recipe",
+                      "image": "assets/DetailCardImages/search_recipes_1.png",
                     },
                     {
-                      "Chicken Sauce Recipe":
-                          "assets/DetailCardImages/search_recipes_2.png",
+                      "title": "Chicken Sauce Recipe",
+                      "image": "assets/DetailCardImages/search_recipes_2.png",
                     },
                   ];
 
                   return DetailCardSmall(
-                    title: cardDetails[index].keys.first,
-                    imagePath: cardDetails[index].values.first,
+                    title: cardDetails[index]["title"]!,
+                    imagePath: cardDetails[index]["image"]!,
                   );
                 }),
               ],
@@ -147,7 +148,7 @@ class _SearchPageState extends State<SearchPage> {
               titleAction: TextButton(
                 onPressed: () => {},
                 child: Text(
-                  "See All",
+                  "View All",
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     color: AppColors.brandPrimary,
@@ -157,7 +158,28 @@ class _SearchPageState extends State<SearchPage> {
               ),
               vertical: true,
               children: [
+                ...List.generate(2, (index) {
+                  List<Map<String, String>> tileDetails = [
+                    {
+                      "image": "assets/DetailCardImages/search_editors_choice_1.png",
+                      "title": "Easy Homemade Beef Burger",
+                      "avatar": "assets/card/profile.png",
+                      "chef": "James Spander",
+                    },{
+                      "image": "assets/DetailCardImages/search_editors_choice_2.png",
+                      "title": "Blueberry with egg for Breakfast",
+                      "avatar": "assets/card/profile_girl.png",
+                      "chef": "Alice Fala",
+                    },
+                  ];
 
+                  return RecipeListTile(
+                    image: tileDetails[index]["image"]!,
+                    title: tileDetails[index]["title"]!,
+                    avatar: tileDetails[index]["avatar"]!,
+                    chefName: tileDetails[index]["chef"]!,
+                  );
+                })
               ],
             ),
           ],

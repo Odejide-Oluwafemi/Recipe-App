@@ -7,18 +7,17 @@ class Section extends StatelessWidget {
     required this.children,
     this.titleAction,
     this.spacing,
-    this.vertical = false,
-    this.mainAxisAlignment,
-    this.crossAxisAlignment,
+    this.vertical = false, this.padding, this.mainAxisAlignment, this.crossAxisAlignment,
   });
 
-  static const double defaultSpacing = 16;
+  static const double defaultSpacing = 14;
 
   final String titleText;
   final List<Widget> children;
   final Widget? titleAction;
   final bool vertical;
   final double? spacing;
+  final EdgeInsetsGeometry? padding;
   final MainAxisAlignment? mainAxisAlignment;
   final CrossAxisAlignment? crossAxisAlignment;
 
@@ -38,25 +37,25 @@ class Section extends StatelessWidget {
             ?titleAction,
           ],
         ),
-        SingleChildScrollView(
-          scrollDirection: vertical ? Axis.vertical : Axis.horizontal,
-          child: vertical
-              ? Column(
-                  mainAxisAlignment:
-                      mainAxisAlignment ?? MainAxisAlignment.start,
-                  crossAxisAlignment:
-                      crossAxisAlignment ?? CrossAxisAlignment.start,
-                  spacing: spacing ?? defaultSpacing,
-                  children: children,
-                )
-              : Row(
-                  mainAxisAlignment:
-                      mainAxisAlignment ?? MainAxisAlignment.start,
-                  crossAxisAlignment:
-                      crossAxisAlignment ?? CrossAxisAlignment.start,
-                  spacing: spacing ?? defaultSpacing,
-                  children: children,
-                ),
+        Container(
+          width: double.infinity,
+          padding: padding,
+          child: SingleChildScrollView(
+            scrollDirection: vertical ? Axis.vertical : Axis.horizontal,
+            child: vertical
+                ? Column(
+              mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
+              crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.start,
+                    spacing: spacing ?? defaultSpacing,
+                    children: children,
+                  )
+                : Row(
+              mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
+              crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.start,
+                    spacing: spacing ?? defaultSpacing,
+                    children: children,
+                  ),
+          ),
         ),
       ],
     );
