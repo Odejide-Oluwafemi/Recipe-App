@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
 class Section extends StatelessWidget {
-  const Section({super.key, required this.titleText, required this.children, this.titleAction, this.spacing, this.vertical = false});
+  const Section({
+    super.key,
+    required this.titleText,
+    required this.children,
+    this.titleAction,
+    this.spacing,
+    this.vertical = false,
+    this.mainAxisAlignment,
+    this.crossAxisAlignment,
+  });
 
   static const double defaultSpacing = 16;
 
@@ -10,6 +19,8 @@ class Section extends StatelessWidget {
   final Widget? titleAction;
   final bool vertical;
   final double? spacing;
+  final MainAxisAlignment? mainAxisAlignment;
+  final CrossAxisAlignment? crossAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
@@ -20,19 +31,32 @@ class Section extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(titleText, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),
+            Text(
+              titleText,
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
             ?titleAction,
           ],
         ),
         SingleChildScrollView(
           scrollDirection: vertical ? Axis.vertical : Axis.horizontal,
-          child: vertical ? Column(
-            spacing: spacing ?? defaultSpacing,
-            children: children,
-          ) : Row(
-            spacing: spacing ?? defaultSpacing,
-            children: children,
-          ),
+          child: vertical
+              ? Column(
+                  mainAxisAlignment:
+                      mainAxisAlignment ?? MainAxisAlignment.start,
+                  crossAxisAlignment:
+                      crossAxisAlignment ?? CrossAxisAlignment.start,
+                  spacing: spacing ?? defaultSpacing,
+                  children: children,
+                )
+              : Row(
+                  mainAxisAlignment:
+                      mainAxisAlignment ?? MainAxisAlignment.start,
+                  crossAxisAlignment:
+                      crossAxisAlignment ?? CrossAxisAlignment.start,
+                  spacing: spacing ?? defaultSpacing,
+                  children: children,
+                ),
         ),
       ],
     );

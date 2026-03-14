@@ -1,5 +1,6 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recipe_app/constants/app_colors.dart';
 import 'package:recipe_app/screens/profile_page.dart';
 import 'package:recipe_app/screens/search_page.dart';
@@ -42,7 +43,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: pages[activeIndex],
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: ClipRRect(
@@ -52,10 +52,12 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {},
           backgroundColor: Colors.black,
           foregroundColor: Colors.white,
-          child: Icon(Icons.settings_outlined, size: 26),
+
+          child: SvgPicture.asset("assets/Chef.svg",fit: BoxFit.contain, width: 26),
         ),
       ),
       bottomNavigationBar: AnimatedBottomNavigationBar.builder(
+        elevation: 20,
         itemCount: iconList.length,
         tabBuilder: (int index, bool isActive) {
           final color = isActive ? AppColors.brandPrimary : AppColors.brandGray;
@@ -71,10 +73,15 @@ class _HomePageState extends State<HomePage> {
         splashSpeedInMilliseconds: 300,
         notchSmoothness: NotchSmoothness.defaultEdge,
         gapLocation: GapLocation.center,
-        leftCornerRadius: 32,
-        rightCornerRadius: 0,
-        height: 60,
+        leftCornerRadius: 20,
+        rightCornerRadius: 20,
+        height: 70,
         onTap: (index) => setActiveIndex(index),
+        shadow: Shadow(
+          color: Colors.grey.shade400,
+          blurRadius: 12,
+          offset: Offset.fromDirection(3, 0)
+        ),
       ),
     );
   }
@@ -148,7 +155,7 @@ class Home extends StatelessWidget {
                     child: Text(
                       "See All",
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w600,
                         color: AppColors.brandPrimary,
                         fontSize: 18,
                       ),
@@ -156,6 +163,8 @@ class Home extends StatelessWidget {
                   ),
                   children: [
                     ...List.generate(5, (index) {
+                      int selectedIndex = 0;
+
                       List<String> categories = [
                         "Breakfast",
                         "Lunch",
@@ -163,12 +172,23 @@ class Home extends StatelessWidget {
                         "Snacks",
                         "Dessert",
                       ];
-                      return CategoryButton(text: categories[index]);
+                      return CategoryButton(text: categories[index], selected: selectedIndex == index,);
                     }),
                   ],
                 ),
                 Section(
                   titleText: "Popular Recipes",
+                  titleAction: TextButton(
+                    onPressed: () => {},
+                    child: Text(
+                      "See All",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.brandPrimary,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
                   children: [
                     ...List.generate(2, (index) {
                       List<String> titles = [

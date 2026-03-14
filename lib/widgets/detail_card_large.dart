@@ -17,7 +17,8 @@ class DetailCardLarge extends StatelessWidget {
       height: 270,
       child: Card(
         color: Colors.white,
-        elevation: 10,
+        elevation: 3,
+        shadowColor: Colors.grey.shade400,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
