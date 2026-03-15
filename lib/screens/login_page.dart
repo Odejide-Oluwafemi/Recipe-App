@@ -20,11 +20,18 @@ class LoginPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  TextButton(
-                    onPressed: () => { Navigator.pushReplacementNamed(context, 'home') },
-                    child: Text(
-                      "Later",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                  InkWell(
+                    onTap: () => { Navigator.pushReplacementNamed(context, 'home') },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        // color: Colors.red,
+                        borderRadius: BorderRadius.circular(12)
+                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 12),
+                      child: Text(
+                        "Later",
+                        style: TextStyle(fontSize: 20, color: Colors.white),
+                      ),
                     ),
                   ),
                 ],
